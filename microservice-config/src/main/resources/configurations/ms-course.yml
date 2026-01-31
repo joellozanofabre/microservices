@@ -1,0 +1,29 @@
+server:
+  port: 9090
+
+spring:
+  application:
+    name: ms-course
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/coursesdb
+    username: jlozanof
+    password: Ganando10k
+  jpa:
+    hibernate:
+      ddl-auto: create
+    database: postgresql
+    #database-platform: org.hibernate.dialect.MySql8Dialect
+    dialect: org.hibernate.dialect.PostgreSQLDialect
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8081/realms/microservices-realm
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    service-url:
+      defaultZone: http://admin:Ganando10k@localhost:8761/eureka/

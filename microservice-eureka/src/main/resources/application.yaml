@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: ms-eureka
+  config:
+    import: optional:configserver:http://localhost:8888   #configutra el config server ruta en donde se encuetnrta el configserve
